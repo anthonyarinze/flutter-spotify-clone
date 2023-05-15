@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/pages/Home.dart';
+import 'package:spotify_clone/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +15,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        brightness: Brightness.dark,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            fontFamily: 'GothamRoundedLight',
+          ),
+        ),
       ),
       home: const Home(),
     );
