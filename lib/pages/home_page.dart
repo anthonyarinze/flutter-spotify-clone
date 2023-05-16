@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/components/Recently_Played.dart';
 import 'package:spotify_clone/components/album_cover.dart';
+import 'package:spotify_clone/components/favorite_artists_bubble.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -108,7 +109,7 @@ class _HomeState extends State<Home> {
               const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AlbumCover(
                       coverUrl:
@@ -117,6 +118,44 @@ class _HomeState extends State<Home> {
                       artist: 'John Doe',
                       isAlbum: true,
                     ),
+                    AlbumCover(
+                      coverUrl:
+                          'https://fastly.picsum.photos/id/1032/300/300.jpg?hmac=wlgDborxXSAhrCFvLKgXejeB5gt5CHR908trwFo84Nw',
+                      name: 'My Album',
+                      artist: 'John Doe',
+                      isAlbum: true,
+                    ),
+                    AlbumCover(
+                      coverUrl:
+                          'https://fastly.picsum.photos/id/1032/300/300.jpg?hmac=wlgDborxXSAhrCFvLKgXejeB5gt5CHR908trwFo84Nw',
+                      name: 'My Album',
+                      artist: 'John Doe',
+                      isAlbum: true,
+                    ),
+                  ],
+                ),
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  child: Text(
+                    "Your favorite artists",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              const SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    FavoriteArtists(),
+                    FavoriteArtists(),
+                    FavoriteArtists(),
                   ],
                 ),
               ),

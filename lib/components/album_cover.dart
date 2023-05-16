@@ -17,20 +17,24 @@ class AlbumCover extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: size.height / 4.5,
-            width: size.width / 2.3,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(3.0),
-            ),
-            child: Image.network(
-              coverUrl,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => {print("Testing")},
+            child: Container(
+              height: size.height / 4.8,
+              width: size.width / 2.6,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(3.0),
+              ),
+              child: Image.network(
+                coverUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(height: 8),
@@ -45,9 +49,10 @@ class AlbumCover extends StatelessWidget {
           Row(
             children: [
               Text(
-                isAlbum ? 'Album' : 'Single',
+                isAlbum ? 'Album ●' : 'Single ●',
                 style: const TextStyle(
                   fontSize: 14,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(width: 8),
@@ -55,6 +60,7 @@ class AlbumCover extends StatelessWidget {
                 artist,
                 style: const TextStyle(
                   fontSize: 14,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],
